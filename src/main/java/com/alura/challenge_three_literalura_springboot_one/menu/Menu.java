@@ -10,6 +10,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Menu {
@@ -89,5 +91,21 @@ public class Menu {
         } catch (NullPointerException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public void librosIdioma() {
+        List<Libro> listarLibroIdioma = repository.findAll();
+        System.out.println("""
+                Escoge el Idioma por sus Abreviados -> XX
+                en -> Ingles
+                es -> Español
+                pt -> Portugues
+                """);
+        var abreviado = scanner.nextLine().toLowerCase();
+        String finalAbreviado = "[" + abreviado + "]";
+        listarLibroIdioma.stream()
+                .filter(libro -> libro.getIdioma() != null)
+                .filter(libro -> Objects.equals(libro.getIdioma(), finalAbreviado))
+                .forEach(System.out::println);
     }
 }
