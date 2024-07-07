@@ -59,11 +59,11 @@ public class Autor {
 
     @Override
     public String toString() {
-        return "{ " + "AUTOR/A👨‍🏫 -> " +
-                "Nombre: " + nombre +
-                ", Fecha de Nacimiento 🐣: " + fechaNacimiento +
-                ", Fecha de Fallecimiento ⭐: " + fechaFallecimiento +
-                "}";
+        return "------------- AUTOR/A👨‍🏫 ------------" + "\n" +
+                "Nombre: " + nombre + "\n" +
+                "Fecha de Nacimiento 🐣: " + fechaNacimiento + "\n" +
+                "Fecha de Fallecimiento ⭐: " + fechaFallecimiento + "\n" +
+                "-----------------------------------";
     }
 
     public List<String> datosAutor(String json) {

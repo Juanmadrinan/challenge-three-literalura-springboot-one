@@ -65,7 +65,29 @@ public class Menu {
     }
 
     public void librosRegistrados() {
-
+        List<Libro> libros = repository.findAll();
+        libros.stream().forEach(System.out::println);
     }
 
+    public void autoresRegistrados() {
+        List<Autor> autores = autorRepository.findAll();
+        autores.stream().forEach(System.out::println);
+    }
+
+    public void autoresFecha() {
+        List<Autor> autores = autorRepository.findAll();
+        System.out.println("Escribe la fecha: ");
+        try {
+            var fecha = scanner.nextInt();
+            scanner.nextLine();
+            autores.stream()
+                    .filter(a -> a.getFechaNacimiento() != null && a.getFechaFallecimiento() != null)
+                    .filter(a -> a.getFechaNacimiento() <= fecha && a.getFechaFallecimiento() >= fecha)
+                    .forEach(System.out::println);
+        } catch (NumberFormatException e) {
+            System.out.println("La fecha ingresada no es un número válido.");
+        } catch (NullPointerException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

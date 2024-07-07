@@ -64,8 +64,10 @@ public class ChallengeThreeLiteraluraSpringbootOneApplication implements Command
 						menu.librosRegistrados();
 						break;
 					case 3:
+						menu.autoresRegistrados();
 						break;
 					case 4:
+						menu.autoresFecha();
 						break;
 					case 5:
 						break;
