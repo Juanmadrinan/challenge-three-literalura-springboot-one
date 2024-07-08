@@ -1,6 +1,8 @@
 package com.alura.challenge_three_literalura_springboot_one.models;
 
+import com.alura.challenge_three_literalura_springboot_one.menu.Menu;
 import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,15 +12,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "Autores")
+@Table(name = "Autor")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Autor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-    @JsonAlias("name") private String nombre;
-    @JsonAlias("birth_year") private Integer fechaNacimiento;
-    @JsonAlias("death_year") private Integer fechaFallecimiento;
+    @JsonAlias("name")
+    private String nombre;
+    @JsonAlias("birth_year")
+    private Integer fechaNacimiento;
+    @JsonAlias("death_year")
+    private Integer fechaFallecimiento;
+
 
     public Autor(){
 

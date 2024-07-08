@@ -34,10 +34,11 @@ public class ChallengeThreeLiteraluraSpringbootOneApplication implements Command
             var seccion = """
                     1. Consultar libros 📘🔎
                     2. Listar libros registrados 🧾📝
-                    3. Listar autores registrados 🧾🖋
-                    4. listar autores vivos en un determinado año ❤👨‍🏫
+                    3. Listar autor registrados 🧾🖋
+                    4. listar autor vivos en un determinado año ❤👨‍🏫
                     5. Listar libros por idioma 📚🌎
-                    6. Salir ⚡
+                    6. Top 10 libros mas descargados 📈🌎
+                    7. Salir ⚡
                     """;
             System.out.println(seccion);
             seleccion = 0;
@@ -48,7 +49,7 @@ public class ChallengeThreeLiteraluraSpringbootOneApplication implements Command
                     scanner.nextLine();
                     break;
                 } catch (InputMismatchException e) {
-                    System.out.println("Respuesta inválida. Por favor, introduce un número");
+                    System.out.println("Respuesta inválida. Por favor, introduce un número del Menu Principal");
                     scanner.nextLine();
                 }
         	}
@@ -73,8 +74,13 @@ public class ChallengeThreeLiteraluraSpringbootOneApplication implements Command
 						menu.librosIdioma();
 						break;
 					case 6:
-						System.out.println("Adios!! 😉");
+						System.out.println("------------- TOP 10 LIBROS MAS DESCARGADOS 📗 ------------");
+						menu.topLibro();
+						System.out.println("-----------------------------------------------------------");
+						break;
+					case 7:
 						x = false;
+						System.out.println("Adios!! 😉");
 						break;
 				}
 			}
