@@ -103,11 +103,10 @@ public class Menu {
                     .filter(a -> a.getFechaNacimiento() != null && a.getFechaFallecimiento() != null)
                     .filter(a -> a.getFechaNacimiento() <= fecha && a.getFechaFallecimiento() >= fecha)
                     .forEach(System.out::println);
-            if(!autores.isEmpty()){
+            if(autores.isEmpty()){
                 System.out.println("+ ------------------------------------------------ +");
                 System.out.println("+ Ningun autor registrado vivio durante el año " + fecha + " +");
                 System.out.println("+ ------------------------------------------------ +");
-
             }
 
         } catch (NumberFormatException e) {
